@@ -22,7 +22,7 @@ class Module extends \kouosl\base\Module
 
         // custom initialization code goes here
     }
-    public function behaviors()
+    /*public function behaviors()
     {
         $behaviors = parent::behaviors();
         switch ($this->namespace)
@@ -54,7 +54,7 @@ class Module extends \kouosl\base\Module
 
         return $behaviors;
 
-    }
+    }*/
 
     public function registerTranslations()
     {
