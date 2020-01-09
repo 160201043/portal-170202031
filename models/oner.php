@@ -1,5 +1,5 @@
 <?php
-namespace kouosl\oneri\models;;
+namespace kouosl\oneri\models;
 
 use Yii;
 use yii\base\NotSupportedException;
@@ -20,6 +20,9 @@ use yii\web\IdentityInterface;
  */
 class oner extends ActiveRecord
 {
+
+    const SCENARIO_CREATE= 'create';
+
     /**
      * {@inheritdoc}
      */
@@ -34,13 +37,18 @@ class oner extends ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'userid', 'filmisim', 'tur1', 'tur2', 'puan', 'yorum'], 'required'],
-            [['id', 'userid', 'puan'], 'integer'],
+            [[ 'filmisim', 'tur1', 'tur2', 'puan', 'yorum'], 'required'],
+            [[ 'puan'], 'integer'],
             [['yorum'], 'string'],
             [['filmisim'], 'string', 'max' => 80],
             [['tur1', 'tur2'], 'string', 'max' => 80],
-            [['id'], 'unique'],
         ];
+    }
+
+    public function scenarios(){
+        $scenarios = parent::scenarios();
+        $scenarios['create'] = [ 'id','userid','filmisim', 'tur1', 'tur2', 'puan', 'yorum'];
+        return $scenarios;
     }
 
     /**
@@ -49,8 +57,8 @@ class oner extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'userid' => 'Userid',
+            //'id' => 'ID',
+            //'userid' => 'Userid',
             'filmisim' => 'Filmisim',
             'tur1' => 'Tur1',
             'tur2' => 'Tur2',

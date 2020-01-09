@@ -3,18 +3,18 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+
 /* @var $this yii\web\View */
 /* @var $model kouosl\oneri\models\oner */
 /* @var $form yii\widgets\ActiveForm */
+//  Yii::$app->user->identity->id
 ?>
 
 <div class="oner-form">
-
+    
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id')->textInput() ?>
-
-    <?= $form->field($model, 'userid')->textInput() ?>
+    <!--<?= $form->field($model, 'id')->textInput() ?>-->
 
     <?= $form->field($model, 'filmisim')->textInput(['maxlength' => true]) ?>
 

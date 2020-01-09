@@ -5,6 +5,7 @@ namespace kouosl\oneri\controllers\backend;
 use Yii;
 use kouosl\oneri\models\oner;
 use yii\data\ActiveDataProvider;
+use kouosl\oneri\controllers\backend\SeaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -14,6 +15,7 @@ use yii\filters\VerbFilter;
  */
 class DefaultController extends Controller
 {
+    public $enableCsrfValidation=false;
     /**
      * {@inheritdoc}
      */
@@ -35,15 +37,38 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => oner::find(),
-        ]);
+        $searchModel = new SeaSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
+    public function actionCreateModelon(){
+        \Yii::$app->response->format=\yii\web\Response::FORMAT_JSON;
+        $model=new oner();
+        $model->scenario=oner::SCENARIO_CREATE;
+        $model->attributes=\Yii::$app->request->post();
+        if($model->validate()){
+            $model->userid=0;
+            $model->save();
+            return array('status' => true,'data'=>'girdi başarılı');
+        }else{
+            return array('status' => false,'data' => $model->getErrors());
+        }
+    }
+
+    public function actionListModelon(){
+        \Yii::$app->response->format=\yii\web\Response::FORMAT_JSON;
+        $model=oner::find()->all();
+        if(count($model)>0){
+            return array('status'=> true,'data'=>$model);
+        }else{
+            return array('status'=> false,'data'=>'Veri yok.');
+        }
+    }
     /**
      * Displays a single oner model.
      * @param integer $id

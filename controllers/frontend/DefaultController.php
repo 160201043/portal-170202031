@@ -5,6 +5,7 @@ namespace kouosl\oneri\controllers\frontend;
 use Yii;
 use kouosl\oneri\models\oner;
 use yii\data\ActiveDataProvider;
+use kouosl\oneri\controllers\frontend\SeaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +36,11 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => oner::find(),
-        ]);
+        $searchModel = new SeaSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -60,12 +61,11 @@ class DefaultController extends Controller
     /**
      * Creates a new oner model.
      * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+     * @return mixed*/
     public function actionCreate()
     {
         $model = new oner();
-
+        $model->userid = Yii::$app->user->identity->id;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', "Entry created successfully.");
             return $this->redirect(['view', 'id' => $model->id]);
@@ -86,7 +86,8 @@ class DefaultController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        if($model->userid==Yii::$app->user->identity->id)
+        {
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -94,6 +95,8 @@ class DefaultController extends Controller
         return $this->render('update', [
             'model' => $model,
         ]);
+        }else
+        return $this->redirect(['index']);
     }
 
     /**
@@ -104,7 +107,9 @@ class DefaultController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionDelete($id)
-    {
+    {   
+        $model = $this->findModel($id);
+        if($model->userid==Yii::$app->user->identity->id)
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
