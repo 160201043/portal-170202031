@@ -95,3 +95,7 @@ Backend tarafında ise değerlendirmeler silinip güncellenebilir.
 
 <img src="https://user-images.githubusercontent.com/56413820/72111765-c55da080-334c-11ea-8bf2-b87515ddf5d8.png" width="400" height="200">
 <img src="https://user-images.githubusercontent.com/56413820/72111908-208f9300-334d-11ea-8ea6-9a6e59723d13.png" width="400" height="200">
+
+### RestApi (List Metodu)
+
+<img src="https://user-images.githubusercontent.com/56413820/72112531-e3c49b80-334e-11ea-9ac7-d0e3e195a3bf.png" width="600" height="300">
