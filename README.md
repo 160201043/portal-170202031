@@ -82,11 +82,11 @@ Filmin kullanıcı tarafından aldığı puan "Progress widget" ı kullanılarak
 
 Üstte görülen alanları doldurduktan sonra 'Save' butonuna basarak kaydedebilirsiniz.
 
-Kaydettikten sonra açılan sayfada kaydınızı görüntüleyebilirsiniz.(kaydınızın başarılı bir şekilde kayıt edildiğini "Entry created successfully" FLASH Message ile anlayabilirsiniz. 
+Kaydettikten sonra açılan sayfada kaydınızı görüntüleyebilirsiniz.(kaydınızın başarılı bir şekilde kayıt edildiğini "Entry created successfully" FLASH Message ile anlayabilirsiniz.) 
 
 <img src="https://user-images.githubusercontent.com/56413820/72110191-9fce9800-3348-11ea-9d36-776445b81523.png" width="600" height="300">
 
-Yaptığınız bir kaydı "UPDATE" ve "DELETE" butonları ile düzenleyip silebilirsiniz. (UYARI: Gösterilen kayıt login olan hesap ile yapılmamış ise bu butonlar çalışmaz ve ana ekrana geri dönersiniz.
+Yaptığınız bir kaydı "UPDATE" ve "DELETE" butonları ile düzenleyip silebilirsiniz. (UYARI: Gösterilen kayıt login olan hesap ile yapılmamış ise bu butonlar çalışmaz ve ana ekrana geri dönersiniz.)
 
 <img src="https://user-images.githubusercontent.com/56413820/72111316-7e22e000-334b-11ea-908f-cfa986b8dbb4.png" width="600" height="300">
 
