@@ -68,7 +68,7 @@ Modülü kurmak için portal klasöründeki composer.json dosyasına aşağıdak
 <img src="https://user-images.githubusercontent.com/56413820/72109296-ad831e00-3346-11ea-8eaf-93eecfe4a436.jpg" width="600" height="300">
 
 Sitede Films title bloğunun altındaki kutuya aradığınız film ismini yazarsanız o film ile ilgili değerlendirmeler listelenecektir.
-İstediğiniz değerlendirmeyi sağ taraftaki göz butonuna basarak görüntüleyebilirsiniz.(Ancak login olan hesap ile oluşturulmamış bir değerlendirmeyi görüntülüyorsanız "UPDATE" ve "DELETE" butonları çalışmaz.
+İstediğiniz değerlendirmeyi sağ taraftaki göz butonuna basarak görüntüleyebilirsiniz.(Ancak login olan hesap ile oluşturulmamış bir değerlendirmeyi görüntülüyorsanız "UPDATE" ve "DELETE" butonları çalışmaz.)
 
 Filmin kullanıcı tarafından aldığı puan "Progress widget" ı kullanılarak gösterilmiştir. 
 
@@ -82,7 +82,7 @@ Filmin kullanıcı tarafından aldığı puan "Progress widget" ı kullanılarak
 
 Üstte görülen alanları doldurduktan sonra 'Save' butonuna basarak kaydedebilirsiniz.
 
-Kaydettikten sonra açılan sayfada kaydınızı görüntüleyebilirsiniz.(kaydınızın başarılı bir şekilde kayıt edildiğini "Entry created successfully" FLASH Message ile anlayabilirsiniz.) 
+Kaydettikten sonra açılan sayfada kaydınızı görüntüleyebilirsiniz.(Kaydınızın başarılı bir şekilde kayıt edildiğini "Entry created successfully" FLASH Message ile anlayabilirsiniz.) 
 
 <img src="https://user-images.githubusercontent.com/56413820/72110191-9fce9800-3348-11ea-9d36-776445b81523.png" width="600" height="300">
 
